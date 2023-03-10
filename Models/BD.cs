@@ -3,18 +3,18 @@ using System;
 using Dapper;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using Pizza.API.Models;
+namespace Pizza.API.Models
 {
     public static class BD
     {
-        private static string _connectionString =  @"Server=SIATHERS\SQLEXPRESS;DataBase=tpFierro;Trusted_Connection=True";
-        public static List<Marca> ObtenerMarcas()
+        private static string _connectionString =  @"Server=A-PHZ2-CIDI-010;DataBase=DAI-Pizzas;Trusted_Connection=True";
+        public static List<Pizza> ObtenerPizza()
         {
-            List<Marca> lista = new List<Marca>();
-            string sql = "SELECT * FROM Marcas";
+            List<Pizza> lista = new List<Pizza>();
+            string sql = "SELECT * FROM Pizzas";
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
-                lista = db.Query<Marca>(sql).AsList();
+                lista = db.Query<Pizza>(sql).AsList();
             }
             return lista;
         }

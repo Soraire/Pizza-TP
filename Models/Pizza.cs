@@ -1,111 +1,63 @@
-using System;
-using System.Collections.Generic;
-namespace TP08.Models
+using Microsoft.AspNetCore.Mvc;
+namespace Pizza.API.Models
 {
-    public class Auto
+    public class Pizza
     {
-        private int _idAuto;
-        private int _idMarca;
-        private string _marca;
-        private string _modelo;
-        private int _precio;
-        private DateTime _fechacreacion;
-        private string _foto1;
-        private string _foto2;
-        private string _foto3;
+        private int _id;
+        private string _nombre;
+        private bool _libreGluten;
+        private int _importe;
+        private string _descripcion;
         
-        public int IdAuto
+        public int Id
         {
             get
             {
-                return _idAuto;
+                return _id;
             }
             set{
-                _idAuto = value;
+                _id = value;
             }
         }
-        public int IdMarca
+        public string Nombre
         {
             get
             {
-                return _idMarca;
+                return _nombre;
             }
             set{
-                _idMarca = value;
-            }
-        }
-        public string Marca
-        {
-            get
-            {
-                return _marca;
-            }
-            set{
-                _marca = value;
+                _nombre = value;
             }
         }
 
-          public string Modelo
+          public bool LibreGluten
         {
             get
             {
-                return _modelo;
+                return _libreGluten;
             }
             set{
-                _modelo = value;
+                _libreGluten = value;
             }
         }
-        public int Precio
+        public int Importe
         {
             get
             {
-                return _precio;
+                return _importe;
             }
             set{
-                _precio = value;
+                _importe = value;
             }
         }
-         public DateTime FechaCreacion
+         public string Descripcion
         {
             get
             {
-                return _fechacreacion;
+                return _descripcion;
             }
             set{
-                _fechacreacion = value;
-            }
-        }
-
-         public string Foto1
-        {
-            get
-            {
-                return _foto1;
-            }
-            set{
-                _foto1 = value;
-            }
-        }
-
-         public string Foto2
-        {
-            get
-            {
-                return _foto2;
-            }
-            set{
-                _foto2 = value;
-            }
-        }
-
-         public string Foto3
-        {
-            get
-            {
-                return _foto3;
-            }
-            set{
-                _foto3 = value;
+                _descripcion = value;
             }
         }
     } 
