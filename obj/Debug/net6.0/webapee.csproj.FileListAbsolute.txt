@@ -1,0 +1,7 @@
+C:\Users\46955772\webapee\obj\Debug\net6.0\webapee.csproj.AssemblyReference.cache
+C:\Users\46955772\webapee\obj\Debug\net6.0\webapee.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\46955772\webapee\obj\Debug\net6.0\webapee.AssemblyInfoInputs.cache
+C:\Users\46955772\webapee\obj\Debug\net6.0\webapee.AssemblyInfo.cs
+C:\Users\46955772\webapee\obj\Debug\net6.0\webapee.csproj.CoreCompileInputs.cache
+C:\Users\46955772\webapee\obj\Debug\net6.0\webapee.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\46955772\webapee\obj\Debug\net6.0\webapee.MvcApplicationPartsAssemblyInfo.cache
