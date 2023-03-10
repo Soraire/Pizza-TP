@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Pizza.API.Models;
 namespace Pizza.API.Controllers
 {
 	[ApiController]
@@ -6,7 +7,8 @@ namespace Pizza.API.Controllers
 	public class PizzasController : ControllerBase {
 		[HttpGet]
 		public IActionResult GetAll(){
-			
+			List<Pizza> lista = BD.ObtenerPizza();
+			return Ok(lista);
 		}
 		
 		[HttpGet("{id}")]

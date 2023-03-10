@@ -1,4 +1,5 @@
 using System.Data.SqlClient;
+using Pizza.API.Controllers;
 using System;
 using Dapper;
 using System.Collections.Generic;
@@ -19,28 +20,18 @@ namespace Pizza.API.Models
             return lista;
         }
 
-        public static Auto ObtenerAutos(int IdMarca)
+        public static Pizza ObtenerPizzaPorID(int id)
         {
-            Auto NuevoAuto = null;
-            string sql = "SELECT * FROM Autos WHERE IdMarca = @pid";
+            Pizza NuevaPizza = null;
+            string sql = "SELECT * FROM Pizzas WHERE Id = @pid";
             using(SqlConnection db = new SqlConnection(_connectionString))
             {
-                NuevoAuto = db.QueryFirstOrDefault<Auto>(sql, new {pId = IdMarca});
+                NuevaPizza = db.QueryFirstOrDefault<Pizza>(sql, new {pId = id});
             }
-            return NuevoAuto;
+            return NuevaPizza;
         }
 
-        public static List<Auto> ListarAutos(int Id){
-        List<Auto> lista = new List<Auto>();
-        string sql = "SELECT * FROM Autos where IdMarca = @pid";
-        using(SqlConnection db = new SqlConnection(_connectionString))
-        {
-            lista = db.Query<Auto>(sql, new {pid = Id}).ToList();
-        }
-        return lista;
-        }
-
-        public static void AgregarAutos(Auto Aut){
+        public static void AgregarAutos(Pizza newPizza){
         string sql = "INSERT INTO Autos VALUES (@pIdAuto, @pIdMarca, @pMarca, @pModelo, @pPrecio, @pFechaCreacion, @pFoto1, @pFoto2, @pFoto3)";
         using(SqlConnection db = new SqlConnection(_connectionString)){
             db.Execute(sql, new { pIdAuto=Aut.IdAuto, pIdMarca = Aut.IdMarca, pMarca = Aut.Marca, pModelo = Aut.Modelo, pPrecio = Aut.Precio, pFechaCreacion=Aut.FechaCreacion, pFoto1=Aut.Foto1, pFoto2=Aut.Foto2, pFoto3=Aut.Foto3 });
